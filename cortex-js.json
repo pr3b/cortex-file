@@ -1,0 +1,1544 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/messages": {
+      "post": {
+        "operationId": "MessagesController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMessageDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Messages"
+        ]
+      },
+      "get": {
+        "operationId": "MessagesController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MessageEntity"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Messages"
+        ]
+      }
+    },
+    "/messages/{id}": {
+      "get": {
+        "operationId": "MessagesController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Messages"
+        ]
+      },
+      "patch": {
+        "operationId": "MessagesController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateMessageDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Messages"
+        ]
+      },
+      "delete": {
+        "operationId": "MessagesController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Messages"
+        ]
+      }
+    },
+    "/threads": {
+      "post": {
+        "operationId": "ThreadsController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateThreadDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ThreadEntity"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Threads"
+        ]
+      },
+      "get": {
+        "operationId": "ThreadsController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ThreadEntity"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Threads"
+        ]
+      }
+    },
+    "/threads/{id}": {
+      "get": {
+        "operationId": "ThreadsController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Threads"
+        ]
+      },
+      "patch": {
+        "operationId": "ThreadsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateThreadDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Threads"
+        ]
+      },
+      "delete": {
+        "operationId": "ThreadsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Threads"
+        ]
+      }
+    },
+    "/models": {
+      "post": {
+        "operationId": "ModelsController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateModelDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Models"
+        ]
+      },
+      "get": {
+        "operationId": "ModelsController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Models"
+        ]
+      }
+    },
+    "/models/load": {
+      "post": {
+        "operationId": "ModelsController_load",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoadModelDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The model has been loaded successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoadModelSuccessDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Models"
+        ]
+      }
+    },
+    "/models/download": {
+      "post": {
+        "operationId": "ModelsController_downloadModel",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DownloadModelDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Models"
+        ]
+      }
+    },
+    "/models/{id}": {
+      "get": {
+        "operationId": "ModelsController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Models"
+        ]
+      },
+      "patch": {
+        "operationId": "ModelsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateModelDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Models"
+        ]
+      },
+      "delete": {
+        "operationId": "ModelsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Models"
+        ]
+      }
+    },
+    "/cortex/start": {
+      "post": {
+        "operationId": "CortexController_startCortex",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartCortexDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Start Cortex successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CortexOperationSuccessfullyDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Cortex"
+        ]
+      }
+    },
+    "/cortex/stop": {
+      "post": {
+        "operationId": "CortexController_stopCortex",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Stop Cortex successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CortexOperationSuccessfullyDto"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Cortex"
+        ]
+      }
+    },
+    "/chat/completions": {
+      "post": {
+        "operationId": "ChatController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateChatCompletionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Inference"
+        ]
+      }
+    },
+    "/assistants": {
+      "post": {
+        "operationId": "AssistantsController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAssistantDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Assistants"
+        ]
+      },
+      "get": {
+        "operationId": "AssistantsController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Assistants"
+        ]
+      }
+    },
+    "/assistants/{id}": {
+      "get": {
+        "operationId": "AssistantsController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Assistants"
+        ]
+      },
+      "delete": {
+        "operationId": "AssistantsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Assistants"
+        ]
+      }
+    },
+    "/inference-settings": {
+      "post": {
+        "operationId": "InferenceSettingsController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateInferenceSettingDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Inference Settings"
+        ]
+      },
+      "get": {
+        "operationId": "InferenceSettingsController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InferenceSettingEntity"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Inference Settings"
+        ]
+      }
+    },
+    "/inference-settings/{id}": {
+      "get": {
+        "operationId": "InferenceSettingsController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Inference Settings"
+        ]
+      },
+      "patch": {
+        "operationId": "InferenceSettingsController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateInferenceSettingDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Inference Settings"
+        ]
+      },
+      "delete": {
+        "operationId": "InferenceSettingsController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Inference Settings"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Cortex API",
+    "description": "The Cortex API description",
+    "version": "1.0",
+    "contact": {
+
+    }
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "ContentValueDto": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          },
+          "annotations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "size": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "value",
+          "annotations"
+        ]
+      },
+      "ThreadContentDto": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "text",
+              "image",
+              "pdf"
+            ]
+          },
+          "text": {
+            "$ref": "#/components/schemas/ContentValueDto"
+          }
+        },
+        "required": [
+          "type",
+          "text"
+        ]
+      },
+      "CreateMessageDto": {
+        "type": "object",
+        "properties": {
+          "metadata": {
+            "type": "object"
+          },
+          "thread_id": {
+            "type": "string"
+          },
+          "assistant_id": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "system",
+              "assistant",
+              "user"
+            ]
+          },
+          "content": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ThreadContentDto"
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ready",
+              "pending",
+              "error",
+              "stopped"
+            ]
+          },
+          "type": {
+            "type": "string"
+          },
+          "error_code": {
+            "type": "string",
+            "enum": [
+              "invalid_api_key",
+              "insufficient_quota",
+              "invalid_request_error",
+              "unknown"
+            ]
+          }
+        },
+        "required": [
+          "thread_id",
+          "role",
+          "content",
+          "status"
+        ]
+      },
+      "MessageEntity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "object": {
+            "type": "string"
+          },
+          "thread_id": {
+            "type": "string"
+          },
+          "assistant_id": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "system",
+              "assistant",
+              "user"
+            ]
+          },
+          "content": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ready",
+              "pending",
+              "error",
+              "stopped"
+            ]
+          },
+          "created": {
+            "type": "number"
+          },
+          "updated": {
+            "type": "number"
+          },
+          "metadata": {
+            "type": "object"
+          },
+          "type": {
+            "type": "string"
+          },
+          "error_code": {
+            "type": "string",
+            "enum": [
+              "invalid_api_key",
+              "insufficient_quota",
+              "invalid_request_error",
+              "unknown"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "object",
+          "thread_id",
+          "role",
+          "content",
+          "status",
+          "created"
+        ]
+      },
+      "UpdateMessageDto": {
+        "type": "object",
+        "properties": {
+
+        }
+      },
+      "ModelSettingParamsDto": {
+        "type": "object",
+        "properties": {
+          "ctx_len": {
+            "type": "number"
+          },
+          "ngl": {
+            "type": "number"
+          },
+          "embedding": {
+            "type": "boolean"
+          },
+          "n_parallel": {
+            "type": "number"
+          },
+          "cpu_threads": {
+            "type": "number"
+          },
+          "prompt_template": {
+            "type": "string"
+          },
+          "system_prompt": {
+            "type": "string"
+          },
+          "ai_prompt": {
+            "type": "string"
+          },
+          "user_prompt": {
+            "type": "string"
+          },
+          "llama_model_path": {
+            "type": "string"
+          },
+          "mmproj": {
+            "type": "string"
+          },
+          "cont_batching": {
+            "type": "boolean"
+          },
+          "vision_model": {
+            "type": "boolean"
+          },
+          "text_model": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ModelRuntimeParamsDto": {
+        "type": "object",
+        "properties": {
+          "temperature": {
+            "type": "number"
+          },
+          "token_limit": {
+            "type": "number"
+          },
+          "top_k": {
+            "type": "number"
+          },
+          "top_p": {
+            "type": "number"
+          },
+          "stream": {
+            "type": "boolean"
+          },
+          "max_tokens": {
+            "type": "number"
+          },
+          "stop": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "frequency_penalty": {
+            "type": "number"
+          },
+          "presence_penalty": {
+            "type": "number"
+          },
+          "engine": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateThreadModelInfoDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "settings": {
+            "$ref": "#/components/schemas/ModelSettingParamsDto"
+          },
+          "parameters": {
+            "$ref": "#/components/schemas/ModelRuntimeParamsDto"
+          },
+          "engine": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "settings",
+          "parameters"
+        ]
+      },
+      "AssistantToolDto": {
+        "type": "object",
+        "properties": {
+          "settings": {
+            "type": "object"
+          },
+          "type": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "settings",
+          "type",
+          "enabled"
+        ]
+      },
+      "CreateThreadAssistantDto": {
+        "type": "object",
+        "properties": {
+          "assistant_id": {
+            "type": "string"
+          },
+          "assistant_name": {
+            "type": "string"
+          },
+          "model": {
+            "$ref": "#/components/schemas/CreateThreadModelInfoDto"
+          },
+          "instructions": {
+            "type": "string"
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssistantToolDto"
+            }
+          }
+        },
+        "required": [
+          "assistant_id",
+          "assistant_name",
+          "model"
+        ]
+      },
+      "CreateThreadDto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "assistants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateThreadAssistantDto"
+            }
+          }
+        },
+        "required": [
+          "title",
+          "assistants"
+        ]
+      },
+      "ThreadEntity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "object": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "assistants": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "createdAt": {
+            "type": "number"
+          },
+          "updatedAt": {
+            "type": "number"
+          },
+          "metadata": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "id",
+          "object",
+          "title",
+          "assistants",
+          "createdAt"
+        ]
+      },
+      "UpdateThreadDto": {
+        "type": "object",
+        "properties": {
+
+        }
+      },
+      "ModelArtifactDto": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      },
+      "ModelMetadataDto": {
+        "type": "object",
+        "properties": {
+          "author": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "size": {
+            "type": "number"
+          },
+          "cover": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "author",
+          "tags",
+          "size"
+        ]
+      },
+      "CreateModelDto": {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "format": {
+            "type": "string",
+            "enum": [
+              "gguf",
+              "api"
+            ]
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModelArtifactDto"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "settings": {
+            "$ref": "#/components/schemas/ModelSettingParamsDto"
+          },
+          "parameters": {
+            "$ref": "#/components/schemas/ModelRuntimeParamsDto"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ModelMetadataDto"
+          },
+          "engine": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "version",
+          "format",
+          "sources",
+          "id",
+          "name",
+          "description",
+          "settings",
+          "parameters",
+          "metadata",
+          "engine"
+        ]
+      },
+      "LoadModelDto": {
+        "type": "object",
+        "properties": {
+          "modelId": {
+            "type": "string"
+          },
+          "settings": {
+            "$ref": "#/components/schemas/ModelSettingParamsDto"
+          }
+        },
+        "required": [
+          "modelId"
+        ]
+      },
+      "LoadModelSuccessDto": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "modelId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message",
+          "modelId"
+        ]
+      },
+      "DownloadModelDto": {
+        "type": "object",
+        "properties": {
+          "modelId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "modelId"
+        ]
+      },
+      "UpdateModelDto": {
+        "type": "object",
+        "properties": {
+
+        }
+      },
+      "StartCortexDto": {
+        "type": "object",
+        "properties": {
+          "host": {
+            "type": "string"
+          },
+          "port": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "host",
+          "port"
+        ]
+      },
+      "CortexOperationSuccessfullyDto": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message",
+          "status"
+        ]
+      },
+      "ChatCompletionMessage": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "system",
+              "assistant",
+              "user"
+            ]
+          }
+        },
+        "required": [
+          "content",
+          "role"
+        ]
+      },
+      "CreateChatCompletionDto": {
+        "type": "object",
+        "properties": {
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChatCompletionMessage"
+            }
+          },
+          "model": {
+            "type": "string"
+          },
+          "stream": {
+            "type": "boolean"
+          },
+          "max_tokens": {
+            "type": "number"
+          },
+          "stop": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "frequency_penalty": {
+            "type": "number"
+          },
+          "presence_penalty": {
+            "type": "number"
+          },
+          "temperature": {
+            "type": "number"
+          },
+          "top_p": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "messages",
+          "model",
+          "stream",
+          "max_tokens",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "temperature",
+          "top_p"
+        ]
+      },
+      "CreateAssistantDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string"
+          },
+          "instructions": {
+            "type": "string"
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssistantToolDto"
+            }
+          },
+          "file_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "metadata": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "id",
+          "avatar",
+          "name",
+          "description",
+          "model",
+          "instructions",
+          "tools",
+          "file_ids"
+        ]
+      },
+      "ControllerPropsDto": {
+        "type": "object",
+        "properties": {
+          "placeholder": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "placeholder",
+          "value"
+        ]
+      },
+      "InferenceSettingDocumentDto": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "extensionName": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "controllerType": {
+            "type": "string"
+          },
+          "controllerProps": {
+            "$ref": "#/components/schemas/ControllerPropsDto"
+          }
+        },
+        "required": [
+          "key",
+          "extensionName",
+          "title",
+          "description",
+          "controllerType",
+          "controllerProps"
+        ]
+      },
+      "CreateInferenceSettingDto": {
+        "type": "object",
+        "properties": {
+          "inferenceId": {
+            "type": "string"
+          },
+          "settings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InferenceSettingDocumentDto"
+            }
+          }
+        },
+        "required": [
+          "inferenceId",
+          "settings"
+        ]
+      },
+      "InferenceSettingEntity": {
+        "type": "object",
+        "properties": {
+          "inferenceId": {
+            "type": "string"
+          },
+          "settings": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "required": [
+          "inferenceId",
+          "settings"
+        ]
+      },
+      "UpdateInferenceSettingDto": {
+        "type": "object",
+        "properties": {
+          "inferenceId": {
+            "type": "string"
+          },
+          "settings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InferenceSettingDocumentDto"
+            }
+          }
+        }
+      }
+    }
+  }
+}
